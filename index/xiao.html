@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小欧个人网站</title>
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏 */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a:hover {
+            color: #004499;
+        }
+
+        /* 英雄区域（首页大图） */
+        .hero {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            display: inline-block;
+            background: #fff;
+            color: #6e8efb;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* 简介部分 */
+        .about {
+            padding: 80px 0;
+            background: #fff;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 项目展示 */
+        .projects {
+            padding: 80px 0;
+            background: #f1f1f1;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .project-info {
+            padding: 20px;
+        }
+        .project-info h3 {
+            margin-bottom: 10px;
+        }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .tag {
+            background: #e0e0e0;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* 联系方式 */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .contact-icon {
+            font-size: 24px;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">我的网站</div>
+                <div class="nav-links">
+                    <a href="#home">首页</a>
+                    <a href="#about">关于</a>
+                    <a href="#projects">项目</a>
+                    <a href="#contact">联系</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首页大图 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>欢迎来到小欧的个人网站</h1>
+            <p>这里展示我的作品、分享我的想法，并与世界连接</p>
+            <a href="#contact" class="btn">联系我</a>
+        </div>
+    </section>
+
+    <!-- 简介部分 -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">关于我</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>你好！我是一名前端开发者，热爱构建美观且实用的网站和应用。拥有实战开发经验，精通HTML、CSS、JavaScript和React框架。</p>
+                    <p>在大学期间，我曾写过许多前端代码和爬虫脚本也发过Web应用，注重用户体验和代码质量。</p>
+                    <p>空闲时间我喜欢学习新技术、写技术博客和参与开源项目。</p>
+                </div>
+                <div class="about-image">
+                    <img src="./img/1.jpg" alt="我的图片">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目展示 -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">我的项目</h2>
+            <div class="project-grid">
+                <!-- 项目1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./img/3.png" alt="项目1">
+                    </div>
+                    <div class="project-info">
+                        <h3>电商网站开发</h3>
+                        <p>一个全功能的电商平台，支持商品展示、购物车和支付功能。</p>
+                        <div class="project-tags">
+                            <span class="tag">CSS3</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">HTML5</span>
+                        </div>
+                        <a href="#">查看详情 →</a>
+                    </div>
+                </div>
+                <!-- 项目2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/2.png" alt="项目2">
+                    </div>
+                    <div class="project-info">
+                        <h3>数据信息的获取</h3>
+                        <p>帮助团队获取大量数据信息进行分析，从而找到最优的解决方案</p>
+                        <div class="project-tags">
+                            <span class="tag">python爬虫</span>
+                            <span class="tag">数据分析</span>
+                        </div>
+                        <a href="#">查看详情 →</a>
+                    </div>
+                </div>
+                <!-- 项目3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400" alt="项目3">
+                    </div>
+                    <div class="project-info">
+                        <h3>个人博客系统</h3>
+                        <p>基于Markdown的静态博客生成器，支持自定义主题。</p>
+                        <div class="project-tags">
+                            <span class="tag">Gatsby</span>
+                            <span class="tag">GraphQL</span>
+                        </div>
+                        <a href="#">查看详情 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">联系我</h2>
+            <p>如果你对我的工作感兴趣或有任何问题，欢迎通过以下方式联系我</p>
+            <div class="contact-links">
+                <a href="3472883926@qq.com"><span class="contact-icon">📧</span> 邮箱</a>
+                <a href="https://github.com/xiaoou-glitch"><span class="contact-icon">🐱</span> GitHub</a>
+                <a><span class="contact-icon">🔗</span> 电话:18778594469</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>© 2023 我的个人网站. 保留所有权利.</p>
+        </div>
+    </footer>
+</body>
+</html>
